@@ -49,7 +49,7 @@ gulp.task('parker', function() {
 });
 
 // Static server + watching scss, js, html files
-gulp.task('serve', ['styles', 'scripts', 'images'], function() {
+gulp.task('serve', ['styles', 'scripts'], function() {
   browserSync.init({
     server: '.'
   });
