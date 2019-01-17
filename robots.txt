@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /img/
+Disallow: /imgmin/
+Disallow: /fonts/
+Disallow: /404.html
