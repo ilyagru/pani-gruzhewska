@@ -202,6 +202,8 @@ section {
             border-radius: $radius-primary;
             transition: all .5s;
             box-shadow: 4px 4px 8px #424242;
+            background: url('../imgmin/background-pattern-4.png') no-repeat center center;
+            background-size: cover;
             background-color: $redLight;
 
             @media screen and (max-width: $width-tablet) {
