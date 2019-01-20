@@ -2,10 +2,20 @@
 
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700&amp;subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Caveat&amp;subset=cyrillic');
+@font-face {
+    font-family: 'Bukyvede';
+    src: local('Bukyvede'), url('../fonts/Bukyvede.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @import 'variables';
 @import 'milligram';
 @import 'helpers';
+
+html {
+    height: 100%;
+}
 
 a {
     display: inline-block;
@@ -26,8 +36,9 @@ a, button {
 h1, .logo {
     margin: 0;
     font-size: 28px;
-    font-family: $caveat;
+    font-family: $bukyvede;
     text-shadow: $black 1px 1px;
+    letter-spacing: 0.1rem;
 }
 
 h2 {
@@ -81,28 +92,50 @@ h3 {
 header {
     background: url('../imgmin/1-6.jpg') no-repeat center right;
     background-size: cover;
+    position: relative;
 
     @media screen and (max-width: $width-mobile) {
         background-position: 70%;
     }
 
+    img {
+        width: 66%;
+        position: absolute;
+        left: 0;
+        top: 155px;
+        z-index: 0;
+
+        @media screen and (max-width: 1050px) {
+            display: none;
+        }
+    }
+
     .headline {
         background-color: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        border-radius: $radius-primary;
+        position: relative;
+        padding: 40px 30px 45px 20px;
         color: #000;
+        border: 1px solid gold;
         text-shadow: $color-pattern $text-shadow-size-small;
-        margin: 150px 0;
-        width: 70%;
+        margin: 180px 0;
+        left: 45px;
+        width: 55.7%;
+        z-index: 10;
 
-
+        @media screen and (max-width: 1050px) {
+            border-radius: $radius-primary;
+        }
         @media screen and (max-width: $width-mobile) {
             width: 100%;
             margin: 100px 0;
+            left: 0;
         }
 
+        h2 {
+            font-size: 3rem;
+        }
         p {
-            font-size: 0.8em;
+            font-size: 0.7em;
         }
     }
 
@@ -319,5 +352,25 @@ footer {
 
     p {
         margin-top: 2.5rem;
+    }
+}
+
+body.body-404 {
+    height: 100%;
+
+    header {
+        min-height: 100%;
+        background: url('../imgmin/1-15.jpg') no-repeat center right;
+
+        .headline {
+            margin-top: 100px;
+            border-radius: $radius-primary;
+            left: 0;
+        }
+    }
+
+    .footer {
+        text-align: center;
+        color: $white;
     }
 }
