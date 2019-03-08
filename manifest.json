@@ -4,6 +4,7 @@
  "display": "minimal-ui",
  "theme_color": "#F85E58",
  "background_color": "#FFFFFF",
+ "start_url": "/",
  "icons": [
   {
    "src": "icons\/android-icon-36x36.png",
