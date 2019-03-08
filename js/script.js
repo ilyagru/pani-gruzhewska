@@ -1,9 +1,11 @@
 'use strict';
 
 window.onload = function() {
-    initSmoothScrolling();
-    initSliders();
+  initSmoothScrolling();
+  initSliders();
 };
+
+// Sliders
 
 function initSliders() {
   var sliderElems = [
@@ -15,14 +17,15 @@ function initSliders() {
   sliderElems.forEach(function(elem, index) {
     var flkty = new Flickity(elem, {
       contain: true,
-      // resize: false,
       prevNextButtons: false,
       pageDots: false,
-      // wrapAround: true
-      autoPlay: 2000 * (index + 1)
+      autoPlay: 2000 * (index + 1),
+      lazyLoad: true
     });
   });
 }
+
+// Scrolling
 
 function initSmoothScrolling() {
   var duration = 1000;
@@ -37,8 +40,9 @@ function initSmoothScrolling() {
     document.body.addEventListener('click', onClick, false);
 
     function onClick(e) {
-      if (!isInPageLink(e.target))
+      if (!isInPageLink(e.target)) {
         return;
+      }
 
       e.stopPropagation();
       e.preventDefault();
@@ -73,7 +77,6 @@ function initSmoothScrolling() {
       element.focus();
     }
   }
-
 }
 
 function jump(target, options) {
@@ -103,17 +106,19 @@ function jump(target, options) {
 
     window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
 
-    if (timeElapsed < duration)
+    if (timeElapsed < duration) {
       requestAnimationFrame(loop);
-    else
+    } else {
       end();
+    }
   }
 
   function end() {
     window.scrollTo(0, start + distance);
 
-    if (typeof opt.callback === 'function')
+    if (typeof opt.callback === 'function') {
       opt.callback();
+    }
   }
 
   function easeInOutQuad(t, b, c, d) {
