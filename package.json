@@ -1,13 +1,13 @@
 {
-  "name": "holiday-horse",
+  "name": "pani-gruzhewska",
   "version": "1.0.0",
-  "description": "Holiday horse",
-  "author": "Anna Gruzhevska",
+  "description": "Pani Gruzhewska",
+  "author": "Anna Gruzhewska",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilyagru/holiday-horse"
+    "url": "https://github.com/ilyagru/pani-gruzhewska"
   },
-  "homepage": "https://holiday-horse.com",
+  "homepage": "https://pani-gruzhewska.com",
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "~3.9.0",
